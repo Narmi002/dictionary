@@ -263,7 +263,6 @@
         btn.addEventListener("click",(e)=>{
             console.log("clicked")
             e.preventDefault()
-            document.getElementById("word").innerHTML=""
             let url=`http://localhost:3000/searchwood?word=${word.value}`
             let r=fetch(url)
             r.then((Response)=>{
