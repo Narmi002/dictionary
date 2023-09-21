@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background-color: white;
+            padding: 17px 0px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav li a {
+            text-decoration: none;
+            padding: 0px 34px;
+            color: black;
+            font-family: 'Itim', cursive;
+            font-weight: bold;
+            font-size: 1.3rem;
+            cursor: pointer;
+        }
+
+        nav li a:hover {
+            font-family: 'Croissant One', cursive;
+            font-size: 1.1rem;
+        }
+
+        .menu-icon {
+            display: none;
+            flex-direction: column;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+        }
+
+        .logo {
+            color: black;
+            font-family: 'Croissant One', cursive;
+            font-size: 1.99rem;
+            font-weight: bold
+        }
+
+        .container {
+            padding: 96px 34px;
+            min-width: 60vw;
+            margin: auto 150px;
+            min-height: 85vh;
+        }
+
+        .container form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .container input {
+            width: 45vw;
+            padding: 8px 4px;
+            margin: 18px 0px;
+            font-size: 1.0rem;
+            font-weight: bold;
+            font-family: 'Ubuntu', sans-serif;
+            border: 2px solid rgb(157, 174, 185);
+            border-radius: 8px;
+        }
+
+        .container label {
+            font-size: 1.5rem;
+            font-family: 'Itim', cursive;
+            font-weight: bold;
+        }
+
+        #btn {
+            background-color: black;
+            color: white;
+            padding: 6px 9px;
+            border: 2px solid black;
+            border-radius: 8px;
+            margin: 7px 0px;
+            font-family: 'Ubuntu', sans-serif;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        #btn:hover {
+            font-family: 'Croissant One', cursive;
+        }
+        .cont {
+            color: black;
+            font-family: 'Ubuntu', sans-serif;
+            padding:14px 0px;
+        }
+        .cont ul {
+            list-style: none;
+        }
+        .cont h3{
+            padding: 20px 0px;
+        }
+        #meaning{
+            padding: 12px 0px;
+            font-size: 1.3rem;
+        }
+        #result{
+            padding: 2px 0px;
+        }
+
+        @media screen and (max-width:598px) {
+            nav {
+                background-color: white;
+                color: black;
+            }
+
+            .bar {
+                background-color: black;
+            }
+
+            .logo {
+                color: black;
+                font-size: 1.5rem;
+            }
+
+            .menu-icon {
+                display: flex;
+                padding: 0px 10px;
+            }
+
+            ul.nav-links {
+                display: none;
+                flex-direction: row;
+                position: absolute;
+                top: 65px;
+                left: 0px;
+                width: 100%;
+                padding: 5px 2px;
+                padding-top: 10px;
+                font-size: 14px;
+            }
+
+            nav ul {
+                justify-content: space-evenly;
+                align-items: center;
+            }
+
+            nav li a {
+                background-color: white;
+                color: black;
+                font-size: 1.0rem;
+            }
+
+            nav li a:hover {
+                font-size: 12px;
+            }
+
+            ul.nav-links.active {
+                display: flex;
+            }
+
+            ul.nav-links li {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .container {
+                min-width: 60vw;
+                padding: 34px 0px;
+                margin: 12px 0px;
+            }
+
+            .container h3,#meaning {
+                font-size: 1.0rem;
+            }
+            .container label {
+                font-size: 1.2rem;
+            }
+
+            .container input {
+                width: 80vw;
+                font-size: 1.0rem;
+                padding: 4px 7px;
+            }
+
+            #btn {
+                font-size: 0.8rem;
+            }
+            .cont {
+                padding: 0px 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="menu">
+        <div class="menu-icon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Services</a></li>
+        </ul>
+        <div class="logo">
+            <span>Dict.com</span>
+        </div>
+    </nav>
+    <div class="container">
+        <form action="/">
+            <label for="word">Enter word</label>
+
+            <input type="text" name="myword" id="word">
+
+            <button id="btn">Search</button>
+        </form>
+       <div class="cont">
+        <h3></h3>
+        <p id="meaning"></p>
+        <p id="result"></p>
+       </div>
+    </div>
+    <script>
+        console.log("workings")
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuIcon = document.querySelector('.menu-icon');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuIcon.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        });
+        btn.addEventListener("click",(e)=>{
+            console.log("clicked")
+            e.preventDefault()
+            document.getElementById("word").innerHTML=""
+            let url=`http://localhost:3000/searchwood?word=${word.value}`
+            let r=fetch(url)
+            r.then((Response)=>{
+                return Response.json()
+            }).then((resp)=>{
+                console.log(resp)
+                document.querySelector("h3").innerText=`You Searched for word : ${word.value}`
+                document.getElementById("meaning").innerText=`Results are `
+                if(resp.definition===""){
+                    show="not valid word"
+                }
+                else{
+                    show=`${resp.definition}`
+                }
+
+                document.getElementById("result").innerHTML=show
+                 word.value=""
+                return resp
+            })
+        })
+    </script>
+</body>
+
+</html>
